@@ -188,3 +188,6 @@ func remove_all_connections(node):
 	for i in $PrimaryGraphEditor.get_connection_list():
 		if i.from == node.name or i.to == node.name:
 			$PrimaryGraphEditor.disconnect_node(i.from, i.from_port, i.to, i.to_port)
+
+func _on_PrimaryGraphEditor__end_node_move():
+	save_resource()
